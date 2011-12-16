@@ -1,0 +1,67 @@
+<theme>
+  <!-- Define Monokai Colors -->
+  <color id="white" red="0.97" green="0.97" blue="0.95" alpha="1.0" /> <!-- #F8F8F2 rgb(97%,97%,95%) -->
+  <color id="black" red="0.08" green="0.08" blue="0.07" alpha="1.0" /> <!-- #0E0E0C rgb(5%,5%,5%) -->
+  <color id="gray" red="0.46" green="0.44" blue="0.37" alpha="1.0" /> <!-- #75715E rgb(46%,44%,37%) -->
+  <color id="highlightgray" red="0.29" green="0.28" blue="0.24" alpha="1.0" /> <!-- #49483E rgb(29%,28%,24%) -->
+  <color id="green" red="0.65" green="0.89" blue="0.18" alpha="1.0" /> <!-- #A6E22E rgb(65%,89%,18%) -->
+  <color id="pink" red="0.98" green="0.15" blue="0.45" alpha="1.0" /> <!-- #F92672 rgb(98%,15%,45%) -->
+  <color id="yellow" red="0.9" green="0.86" blue="0.45" alpha="1.0" /> <!-- #E6DB74 rgb(90%,86%,45%) -->
+  <color id="purple" red="0.68" green="0.51" blue="1.0" alpha="1.0" /> <!-- #AE81FF rgb(68%,51%,100%) -->
+  <color id="orange" red="0.99" green="0.59" blue="0.12" alpha="1.0" /> <!-- #FD971F rgb(99%,59%,12%) -->
+  <color id="blue" red="0.40" green="0.85" blue="0.94" alpha="1.0" /> <!-- #66D9EF rgb(40%,85%,94%) -->
+    
+	<!-- Set Colors -->
+	<color id="foreground" extendsColorID="white" />
+	<color id="background" extendsColorID="black" />
+	
+	<color id="tag" extendsColorID="pink" />
+	<color id="handle" extendsColorID="highlightgray" />
+	<color id="insertionPoint" extendsColorID="highlightgray" />
+  <color id="selection" extendsColorID="highlightgray" />
+  <color id="task" extendsColorID="white" />
+  <color id="project" extendsColorID="green" />  
+	<color id="note" extendsColorID="gray" />
+	<color id="groupHeader" extendsColorID="blue" />
+	<color id="done" extendsColorID="yellow" />	
+
+	<!-- Window Style -->		
+	<window foregroundColorID="foreground" backgroundColorID="background" shouldUseHUDScrollers="no" />
+	
+	<!-- Text View Style -->
+	<font id="base" name="Monaco" size="0"  />
+	<characterStyle id="base" fontID="base" foregroundColorID="foreground" />
+	<paragraphStyle id="base" paragraphSpacingBefore="0" paragraphSpacing="0" lineSpacing="0" lineHeightMultiple="1.2" alignment="NSLeftTextAlignment" />
+	<textView
+		shouldAntialiasText="yes"
+		shouldShowNoteHandles="no"
+		shouldShowProjectHandles="yes"
+		defaultCharacterStyleID="base"
+		insertionPointColorID="insertionPoint"
+		selectionColorID="selection"
+		handleColorID="handle"
+		tagColorID="tag"
+	/>
+
+	<!-- Task style. This section defines the styles that are applied to task lines. -->
+	<characterStyle id="task" fontID="base" foregroundColorID="task" />
+	<entryRule matchesQuery="type = task" lineCharacterStyleID="task" paragraphStyleID="base" />
+
+	<!-- Project style. This section defines the styles that are applied to project lines. -->
+	<characterStyle id="project" fontID="base" foregroundColorID="project" />
+	<entryRule matchesQuery="type = &quot;project&quot;" lineCharacterStyleID="project" paragraphStyleID="base" />
+
+	<!-- Note style. This section defines the styles that are applied to note lines. -->
+	<characterStyle id="note" fontID="base" foregroundColorID="note" />
+	<entryRule matchesQuery="type = note" lineCharacterStyleID="note" paragraphStyleID="base" />
+
+	<!-- GroupHeader style. This section defines the styles that are applied to groupHeader lines. (top level projects) -->
+	<characterStyle id="groupHeader" fontID="base" foregroundColorID="groupHeader" size="14" />
+	<paragraphStyle id="groupHeader" extendsParagraphStyleID="base" paragraphSpacingBefore="16" />
+	<entryRule matchesQuery="isgroupheader" paragraphStyleID="groupHeader" lineCharacterStyleID="groupHeader" />
+	
+	<!-- @done style. This section defines the styles that are applied to lines tagged with @done. -->
+	<characterStyle id="done" foregroundColorID="done" strikethroughStyle="NSUnderlineStyleSingle" fontTraitMask="NSItalicFontMask" />
+	<entryRule matchesQuery="@done" contentCharacterStyleID="done" />
+	
+</theme>
